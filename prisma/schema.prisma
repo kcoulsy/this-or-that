@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Situation {
+  id          Int          @id @default(autoincrement())
+  description String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  ComparisonA Comparison[] @relation("ComparisonA")
+  ComparisonB Comparison[] @relation("ComparisonB")
+}
+
+model Comparison {
+  id           Int       @id @default(autoincrement())
+  situationA   Situation @relation("ComparisonA", fields: [situationAId], references: [id])
+  situationAId Int
+  situationB   Situation @relation("ComparisonB", fields: [situationBId], references: [id])
+  situationBId Int
+  aScore       Int
+  bScore       Int
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}

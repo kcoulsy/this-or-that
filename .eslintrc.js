@@ -28,5 +28,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'operator-linebreak': 'off',
   },
 };
