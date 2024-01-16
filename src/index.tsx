@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { serveStatic } from '@hono/node-server/serve-static';
 import { z } from 'zod';
 import prisma from './db';
 import Layout from './components/layout';
@@ -7,6 +8,8 @@ import Comparison from './components/comparison';
 const app = new Hono();
 
 let count: number | null = null;
+
+app.use('/assets/*', serveStatic({ root: './dist' }));
 
 app.get('/', async (c) => {
   if (!count) {
