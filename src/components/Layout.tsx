@@ -7,7 +7,7 @@ const Layout: FC = (props) => (
     <head>
       <ViteLinks />
     </head>
-    <body>
+    <body class="font-sans">
       {props.children}
       <ViteScripts />
     </body>

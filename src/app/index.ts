@@ -2,15 +2,11 @@
 import 'vite/modulepreload-polyfill';
 import './style.css';
 
-console.log('heyo');
-
 const situationA = document.getElementById('situationA');
 const situationB = document.getElementById('situationB');
-console.log('Hello from Hono!');
-document.querySelectorAll('.situation-btn').forEach((btn) => {
-  btn.addEventListener('click', async () => {
-    console.log('Clicked', btn.id);
 
+[situationA, situationB].forEach((btn) => {
+  btn?.addEventListener('click', async () => {
     const response = await fetch('/comparison', {
       method: 'POST',
       headers: {
@@ -19,7 +15,7 @@ document.querySelectorAll('.situation-btn').forEach((btn) => {
       body: JSON.stringify({
         situationAId: situationA?.dataset.id,
         situationBId: situationB?.dataset.id,
-        selected: btn.id === 'situationA' ? 'A' : 'B',
+        selected: btn?.id === 'situationA' ? 'A' : 'B',
       }),
     });
 

@@ -2,8 +2,8 @@ import { Hono } from 'hono';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { z } from 'zod';
 import prisma from './db';
-import Layout from './components/layout';
-import Comparison from './components/comparison';
+import Layout from './components/Layout';
+import Comparison from './components/Comparison';
 
 const app = new Hono();
 
