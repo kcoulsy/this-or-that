@@ -11,6 +11,7 @@ const app = new Hono();
 app.use('/assets/*', serveStatic({ root: './dist' }));
 
 app.get('/', async (c) => c.html(<IndexPage />));
+
 app.get('/scores', async (c) => c.html(<ScoresPage />));
 
 const comparisonSchema = z.object({

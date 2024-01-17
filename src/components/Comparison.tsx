@@ -8,7 +8,7 @@ interface ComparisonProps {
 }
 
 const Comparison: FC<ComparisonProps> = (props) => (
-  <main class="flex items-center justify-center flex-col h-full">
+  <main class="flex items-center justify-center flex-col h-full container mx-auto">
     <div class="question-container grid grid-cols-[1fr,_auto,_1fr] items-center">
       <div class="question-block flex flex-col items-center">
         <SituationButton situation={props.situationA} id="situationA" />
