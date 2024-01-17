@@ -15,7 +15,7 @@ const Comparison: FC<ComparisonProps> = (props) => (
         <div class="percent inline text-2xl text-center w-20"></div>
       </div>
       VS
-      <div class="question-block">
+      <div class="question-block flex flex-col items-center">
         <SituationButton situation={props.situationA} id="situationB" />
         <div class="percent inline text-2xl text-center w-20"></div>
       </div>
