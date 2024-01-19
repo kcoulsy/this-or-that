@@ -1,4 +1,9 @@
 {
+  "name": "this-or-that",
+  "version": "1.0.0",
+  "description": "A simple web app that lets you vote on which of two options you prefer.",
+  "author": "Kristian Coulson",
+  "license": "MIT",
   "scripts": {
     "dev-server": "bun run --hot src/index.tsx",
     "dev-app": "vite",
